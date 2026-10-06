@@ -1,0 +1,73 @@
+/* 全局样式：只放所有页面通用的东西。单据自己的样式写在页面的 <style scoped> 里 */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  color: #262626;
+  background: #f0f2f5;
+}
+
+/* ---------- 布局 ---------- */
+.layout { min-height: 100vh; }
+.topbar {
+  height: 52px; background: #001529; color: #fff;
+  display: flex; align-items: center; gap: 16px; padding: 0 20px;
+}
+.topbar .logo { font-weight: 600; font-size: 16px; }
+.topbar .sub { color: #8c8c8c; }
+.topbar .demo { margin-left: auto; display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.topbar .demo-tip { color: #ffd666; font-size: 12px; }
+.topbar .el-switch__label { color: #fff; }
+.side { background: #001529; min-height: calc(100vh - 52px); }
+.side .el-menu { border-right: none; }
+.side .el-menu-item.is-active { background: #1677ff !important; }
+.side .el-menu-item.not-ready { color: #595959 !important; }
+.main { padding: 16px 20px 80px; min-width: 0; }
+.crumb { margin-bottom: 12px; display: flex; align-items: center; }
+.el-card { margin-bottom: 12px; border-radius: 6px; overflow: visible; }
+.el-card__body { position: relative; }
+.card-title { margin: 0 0 12px; font-size: 15px; font-weight: 600; display: flex; align-items: center; }
+
+/* ---------- 通用文字 ---------- */
+.muted { color: #8c8c8c; }
+.orange { color: #d46b08; font-weight: 600; }
+.req::before { content: "*"; color: #ff4d4f; margin-right: 3px; }
+.field-err { color: #ff4d4f; font-size: 12px; line-height: 1.6; }
+.is-error .el-textarea__inner, .is-error .el-input__wrapper { box-shadow: 0 0 0 1px #ff4d4f inset; }
+.num { text-align: right; }
+
+/* "本页规则"小标记：放在面包屑后面，挂页面级角标 */
+.pageflag {
+  display: inline-block; font-size: 12px; color: #8c8c8c;
+  border: 1px dashed #d9d9d9; border-radius: 4px; padding: 1px 8px; margin-left: 8px;
+}
+
+/* 提醒类标记（如"涨价"）：红色小标签，紧跟在数值后面（07-UI规范库） */
+.rise {
+  display: inline-block; margin-left: 6px; padding: 0 6px; border-radius: 4px;
+  background: #ff4d4f; color: #fff; font-size: 12px; line-height: 18px;
+}
+.el-table .rise-row td.el-table__cell { background: #fff1f0 !important; }
+
+/* 金额汇总行 */
+.sum { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+.sum b { font-size: 16px; }
+.sum .hint { color: #8c8c8c; font-size: 12px; }
+
+/* 危险按钮用红色（07-UI规范库） */
+.el-message-box__btns .el-button--danger { background: #ff4d4f; border-color: #ff4d4f; }
+
+/* ---------- 角标 ---------- */
+.anno-host { position: relative; }
+.anno-badge {
+  position: absolute; top: -9px; left: -9px; z-index: 20;
+  min-width: 22px; height: 22px; padding: 0 5px; border-radius: 11px;
+  background: #fa541c; color: #fff; font-size: 12px; line-height: 22px; text-align: center;
+  cursor: pointer; box-shadow: 0 0 0 2px #fff; font-weight: normal;
+}
+.anno-pop {
+  position: fixed; z-index: 3000; background: #262626; color: #fff;
+  padding: 8px 12px; border-radius: 6px; max-width: 320px; font-size: 12px; line-height: 1.6;
+}
+.anno-pop-tip { color: #bfbfbf; }
