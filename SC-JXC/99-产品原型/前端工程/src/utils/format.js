@@ -24,7 +24,7 @@ export function nowStr() {
 export const clone = obj => JSON.parse(JSON.stringify(obj))
 
 /**
- * 生成单号：前缀-年月日-4位流水（见 01-全局背景信息/40-单据目录与通用状态.md）
+ * 生成单号：前缀-年月日-4位流水（见 01-全局背景信息/04-单据目录与通用状态.md）
  * @param {string} prefix 单号前缀，如 CGDD
  * @param {string[]} usedNos 已经用过的单号
  */
